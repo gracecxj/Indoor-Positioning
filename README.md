@@ -7,7 +7,7 @@
 2. using the accelerometer and the magnetometer data to enhence the time consistency of the location prediction(trajectory continuity)
 
 **current progress:**
-- collected data insite, and get the ouput file from the prebuilt android mobile app(availabel https://github.com/vradu10/LSR_DataCollection.git). 
+- collected data insite, and get the ouput file from the prebuilt android mobile app(more information available:  https://github.com/vradu10/LSR_DataCollection.git). 
 - preprocessed the data file, and converted them into standard inputs and outputs that the neural nets required.
 - constructed 2 simple neural nets(classification, regression) to predict the location from wifi fingerprint
 
