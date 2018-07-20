@@ -12,7 +12,7 @@
 - constructed 2 simple neural nets(classification, regression) to predict the location from wifi fingerprint
 
 **to be continue:**
--implement autoencoder layerwise to pretrain the neral nets
--implemnet the hidden markov model to enforce time consistency(2 adjacent timestep's location do not differ too much -> tragectory continuity)
+- implement autoencoder layerwise to pretrain the neral nets
+- implement the hidden markov model to enforce time consistency(2 adjacent timestep's location do not differ too much -> tragectory continuity)
 
 
