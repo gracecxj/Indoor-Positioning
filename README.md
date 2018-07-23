@@ -13,7 +13,7 @@
 - implemented autoencoder layerwise to pretrain the neural nets(make use of the large amount of unlabeled wifi data collected previously)
 
 **Current results visualization:**
-![error line classification(64,32,16)](Indoor-Positioning/results(gridsize2+auto)/errors_visualization_1.png)
+![error line classification(64,32,16)](https://github.com/gracecxj/Indoor-Positioning/blob/master/results(gridsize2%2Bauto)/errors_visualization_1.png)
 ![error line classification(200,200,200)](https://github.com/gracecxj/Indoor-Positioning/blob/master/results(gridsize2%2Bauto)/errors_visualization_1_1.png)
 
 ![error line classification(64,32,16)](https://github.com/gracecxj/Indoor-Positioning/blob/master/results(gridsize2%2Bauto)/errors_visualization_2.png)
