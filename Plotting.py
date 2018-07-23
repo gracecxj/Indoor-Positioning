@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import math
 
 import statsmodels.api as sm
-
 north_west = (55.945139, -3.18781)  # A
 south_east = (55.944600, -3.186537)  # B
 X_GRID_NUM = 40
 Y_GRID_NUM = 30
+
 
 def get_distance(lnglat1, lnglat2):
     '''
@@ -90,22 +90,29 @@ def transfer_error_in_meters(data, flag):
 # \\wrong version, do not use
 # def plot_cdf(mark):
 
-# read neural(target & prediction) from "test_output_{}.txt"
-# write error in meters into file "e_{}.txt"
+# read neural(target & prediction) from "test_output_{}.txt",
+# and write error in meters into file "e_{}.txt"
 def save_error_in_meters(mark, fn_suffix):
+    '''
+
+    :param mark: 1 - classification, 2 - regression
+    :param fn_suffix: identify which model has been used(classification/regression, what is the hidden layer's structure)
+    :return: no return, but write error in meters in file "./interim_output/e_{}.txt"
+    '''
     fn = './interim_output/test_output_{}.txt'.format(fn_suffix)
-    experiment = ["classification", "regression"]
+    # experiment = ["classification", "regression"]
     target_and_neural_out = np.loadtxt(fn, delimiter=',')
 
     # classification
     if mark == 1:
         error_in_meters = transfer_error_in_meters(target_and_neural_out, flag=True)
-        with open("e_{}.txt".format(fn_suffix), "wb") as f:
+        with open("./interim_output/e_{}.txt".format(fn_suffix), "wb+") as f:
             np.savetxt(f, error_in_meters, delimiter=",", newline='\n')
+
     # regression
     else:
         error_in_meters = transfer_error_in_meters(target_and_neural_out, flag=False)
-        with open("e_{}.txt".format(fn_suffix), "wb") as f:
+        with open("./interim_output/e_{}.txt".format(fn_suffix), "wb+") as f:
             np.savetxt(f, error_in_meters, delimiter=",", newline='\n')
 
     # # Choose how many bins you want here
@@ -184,7 +191,7 @@ def plot_train_val(model_history, mark):
     ax2.legend()
 
     plt.show()
-    fig.savefig("Acc_Loss_curve_{}.png".format(mark))
+    fig.savefig("./graph_output/Acc_Loss_curve_{}.png".format(mark))
 
 
 # correct implementation version
@@ -197,20 +204,23 @@ def cdf_plot(data, name, number):
     plt.plot(x, y, label=name)
 
 
+# 该函数将网络输出结果和目标对比的文件"interim_output/test_output_{}.txt"转为米计误差，并写入"./interim_output/e_{}.txt"
 def main():
-    fn_suffix_list = ["1", "1_1", "2"]
+    fn_suffix_list = ["1", "1_1", "2", "2_1"]
 
-    # classification(64,32,16)
+    # classification(64, 32, 16)
     save_error_in_meters(mark=1, fn_suffix=fn_suffix_list[0])
     # classification(200,200,200)
     save_error_in_meters(mark=1, fn_suffix=fn_suffix_list[1])
-    # regression
+    # regression(64, 32, 16)
     save_error_in_meters(mark=2, fn_suffix=fn_suffix_list[2])
+    # regression(200,200,200)
+    save_error_in_meters(mark=2, fn_suffix=fn_suffix_list[3])
 
     fig = plt.figure()
-    models = ["classification(64,32,16)", "classification(200,200,200)", "regression"]
+    models = ["classification(64,32,16)", "classification(200,200,200)", "regression(64,32,16)", "regression(200,200,200)"]
     for suffix, model_name in zip(fn_suffix_list, models):
-        data = np.loadtxt("e_{}.txt".format(suffix))
+        data = np.loadtxt("./interim_output/e_{}.txt".format(suffix))
         cdf_plot(data, model_name, 100)
 
     plt.legend(loc=8, bbox_to_anchor=(0.65, 0.3), borderaxespad=0.)

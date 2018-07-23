@@ -6,10 +6,7 @@ import re
 import h5py
 
 
-
 # ----------------------------------------------------------------------------------------
-
-wifi_filename = "./preprocessing/wifi_id.txt"
 
 
 def read_ap_to_dict(filename):
@@ -21,8 +18,9 @@ def read_ap_to_dict(filename):
     return ap_dict
 
 
-WIFI_DICT = read_ap_to_dict(wifi_filename)
+wifi_filename = "./preprocessing/wifi_id.txt"
 
+WIFI_DICT = read_ap_to_dict(wifi_filename)
 
 # ----------------------------------------------------------------------------------------
 
@@ -38,7 +36,7 @@ def scan_wifi_and_write(file_name):
         # i = i + 1
         # pre = item.getAttribute("t")
         # print(i, "->", item.getAttribute("t"), len(item.childNodes) // 2)
-        wifi_record = []    # wifi_record is a list, which contains len(wifi_dict) elements
+        wifi_record = []  # wifi_record is a list, which contains len(wifi_dict) elements
         for _ in range(len(WIFI_DICT.keys())):
             wifi_record.append(0)
 
@@ -47,7 +45,7 @@ def scan_wifi_and_write(file_name):
                 ap_id = item.childNodes[j].getAttribute("b")
                 ap_v = item.childNodes[j].getAttribute("s")
                 if ap_id in WIFI_DICT.keys():
-                    index = int(WIFI_DICT[ap_id][1])-1
+                    index = int(WIFI_DICT[ap_id][1]) - 1
                     wifi_record[index] = int(ap_v)
                 else:
                     print("{} not in dict\n".format(ap_id))
@@ -94,11 +92,12 @@ data_shape = (len(unlabeled_wifi_list), len(WIFI_DICT.keys()))
 unlabeled_wifi_records = np.reshape(unlabeled_wifi_list, data_shape)
 unlabeled_wifi_array = normalize_wifi_inputs(unlabeled_wifi_records)
 
+# save unlabeled wifi inputs to "unlabeled_wifi.txt"
 with open("./unlabeled/unlabeled_wifi.txt", "w") as f:
     np.savetxt(f, unlabeled_wifi_array, delimiter=",", newline='\n')
 
+# save unlabeled wifi inputs to "unlabeled_wifi.h5"
 h5_filename = "./unlabeled/unlabeled_wifi.h5"
 h5_file = h5py.File(h5_filename, mode='w')
 h5_file.create_dataset("unlabeled neural inputs", data=unlabeled_wifi_array)
 h5_file.close()
-

@@ -5,14 +5,15 @@ import tensorflow as tf
 
 tf.set_random_seed(100)
 
-from keras.models import Sequential
-from keras.layers import Dense, Dropout
-from keras.optimizers import SGD
+
 import h5py
 from preprocessing import Masking
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MultipleLocator, FormatStrFormatter
 from collections import OrderedDict
 import Plotting
+import sdae
+
 
 north_west = (55.945139, -3.18781)  # A
 south_east = (55.944600, -3.186537)  # B
@@ -198,8 +199,8 @@ def data_shuffle_split2(name):
     return X_train, Y_train, X_test, Y_test, SAMPLE_NUM, INPUT_DIM, OUTPUT_DIM
 
 
-# error line plot into file "errors_visualization_{}.png"
-def visualization(grid_dict, Y_test, Y_pre):
+# wrong version of visualization function, use the next one
+'''def visualization(grid_dict, Y_test, Y_pre, suffix):
     fig = plt.figure()
     plt.xlabel("x-longitude")
     plt.ylabel("y-latitude")
@@ -212,7 +213,6 @@ def visualization(grid_dict, Y_test, Y_pre):
             tar_ind = target.index(max(target))
             pre_ind = pred.index(max(pred))
 
-            # print("target:", np.divmod(grid_dict[tar_ind], X_GRID_NUM), "  predict:", np.divmod(grid_dict[pre_ind], X_GRID_NUM))
 
             # error line
             plt.plot([grid_dict[pre_ind] % X_GRID_NUM, grid_dict[tar_ind] % X_GRID_NUM],
@@ -223,15 +223,15 @@ def visualization(grid_dict, Y_test, Y_pre):
             plt.scatter(grid_dict[tar_ind] % X_GRID_NUM, grid_dict[tar_ind] // X_GRID_NUM, label='target', color='c', marker='.')
 
         # plt.title("Errors of classification(64, 32, 16)")
-        plt.title("Errors of classification(200,200,200)")
+        plt.title("Errors of classification{}".format(suffix))
 
-        handles, labels = plt.gca().get_legend_handles_labels()
-        by_label = OrderedDict(zip(labels, handles))
-        plt.legend(by_label.values(), by_label.keys())
+        # handles, labels = plt.gca().get_legend_handles_labels()
+        # by_label = OrderedDict(zip(labels, handles))
+        # plt.legend(by_label.values(), by_label.keys())
 
         plt.show()
-        # fig.savefig('errors_visualization_1.png')
-        fig.savefig('errors_visualization_1_1.png')
+        # fig.savefig('./graph_output/errors_visualization_1.png')    # classification [64,32,16]
+        fig.savefig('./graph_output/errors_visualization_1_1.png')    # calssification [200,200,200]
 
     # output 2 values (regression)
     else:
@@ -251,20 +251,160 @@ def visualization(grid_dict, Y_test, Y_pre):
 
         plt.title("Errors of regression")
 
-        handles, labels = plt.gca().get_legend_handles_labels()
+        # handles, labels = plt.gca().get_legend_handles_labels()
+        handles, labels = plt.get_legend_handles_labels()
         by_label = OrderedDict(zip(labels, handles))
         plt.legend(by_label.values(), by_label.keys())
 
         plt.show()
-        fig.savefig('errors_visualization_2.png')
+        # fig.savefig('./graph_output/errors_visualization_2.png')    # regression [64,32,16]
+        fig.savefig('./graph_output/errors_visualization_2_1.png')    # regression [200,200,200]
+
+'''
+
+# error line plot into file "./graph_output/errors_visualization_{}.png"
+def visualization(grid_dict, Y_test, Y_pre, baseline, suffix):
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax.grid(True)
+    ax.set_xlabel("x-longitude")
+    ax.set_ylabel("y-latitude")
+
+    # xmajorLocator = MultipleLocator(5)  # 将x主刻度标签设置为10的倍数
+    # xmajorFormatter = FormatStrFormatter('%1.f')  # 设置x轴标签文本的格式
+    # xminorLocator = MultipleLocator(1)  # 将x轴次刻度标签设置为2的倍数
+    # ymajorLocator = MultipleLocator(5)  # 将x主刻度标签设置为10的倍数
+    # ymajorFormatter = FormatStrFormatter('%1.f')  # 设置x轴标签文本的格式
+    # yminorLocator = MultipleLocator(1)  # 将x轴次刻度标签设置为2的倍数
+    #
+    # # setting x,y axis major
+    # ax.xaxis.set_major_locator(xmajorLocator)
+    # ax.xaxis.set_major_formatter(xmajorFormatter)
+    # ax.yaxis.set_major_locator(ymajorLocator)
+    # ax.yaxis.set_major_formatter(ymajorFormatter)
+    #
+    # # setting x,y axis minor (do not have label text)
+    # ax.xaxis.set_minor_locator(xminorLocator)
+    # ax.yaxis.set_minor_locator(yminorLocator)
+    #
+    # # 均使用次坐标轴画网格
+    # ax.xaxis.grid(True, which='minor')
+    # ax.yaxis.grid(True, which='minor')
+
+
+    # output 1 (classification)
+    if grid_dict is not None:
+
+        # 设置x,y主坐标轴
+        my_x_ticks = np.arange(0, 40, 5)
+        my_y_ticks = np.arange(0, 30, 5)
+        ax.set_xticks(my_x_ticks, minor=False)
+        ax.set_yticks(my_y_ticks, minor=False)
+        # 设置x,y次坐标轴
+        my_x_ticks = np.arange(0, 40, 1)
+        my_y_ticks = np.arange(0, 30, 1)
+        ax.set_xticks(my_x_ticks, minor=True)
+        ax.set_yticks(my_y_ticks, minor=True)
+
+        ax.set_xlim((0, 40))
+        ax.set_ylim((0, 30))
+
+        # 设置x，y值域
+        ax.set_xlim(left=0, right=40)
+        ax.set_ylim(bottom=30, top=0)  # 此处将原点设置为左上角
+        ax.xaxis.tick_top()  # 将x坐标标记移到上方
+
+        # 均使用次坐标轴画网格
+        ax.xaxis.grid(True, which='minor')
+        ax.yaxis.grid(True, which='minor')
+
+        for target, pred, i in zip(Y_test, Y_pre, range(np.shape(Y_test)[0])):
+            target = target.tolist()
+            pred = pred.tolist()
+
+            tar_ind = target.index(max(target))
+            pre_ind = pred.index(max(pred))
+
+            # error line
+            ax.plot([grid_dict[pre_ind] % X_GRID_NUM, grid_dict[tar_ind] % X_GRID_NUM],
+                     [grid_dict[pre_ind] // X_GRID_NUM, grid_dict[tar_ind] // X_GRID_NUM], label='error line' if i == 0 else "",
+                    color='r', linewidth=0.5)
+            # prediction point
+            ax.scatter(grid_dict[pre_ind] % X_GRID_NUM, grid_dict[pre_ind] // X_GRID_NUM, label='prediction' if i == 0 else "",
+                       color='b', marker='.')
+            # target point
+            ax.scatter(grid_dict[tar_ind] % X_GRID_NUM, grid_dict[tar_ind] // X_GRID_NUM, label='target' if i == 0 else "",
+                       color='c', marker='.')
+
+        ax.legend()
+        # handles, labels = plt.gca().get_legend_handles_labels()
+        # by_label = OrderedDict(zip(labels, handles))
+        # plt.legend(by_label.values(), by_label.keys())
+
+        plt.title("Errors of classification{}".format(suffix), y=1.08)
+        plt.show()
+
+        # save fig
+        if baseline:
+            fig.savefig('./graph_output/errors_visualization_1_1.png')  # calssification [200,200,200]
+        else:
+            fig.savefig('./graph_output/errors_visualization_1.png')    # classification [64,32,16]
+
+
+    # output 2 values (regression)
+    else:
+        # 设置x,y主坐标轴
+        my_x_ticks = np.arange(-40, 40, 10)
+        my_y_ticks = np.arange(-30, 30, 10)
+        ax.set_xticks(my_x_ticks, minor=False)
+        ax.set_yticks(my_y_ticks, minor=False)
+
+        # 设置x,y次坐标轴
+        my_x_ticks = np.arange(-40, 40, 2)
+        my_y_ticks = np.arange(-30, 30, 2)
+        ax.set_xticks(my_x_ticks, minor=True)
+        ax.set_yticks(my_y_ticks, minor=True)
+
+        ax.set_xlim((-40, 40))
+        ax.set_ylim((-30, 30))
+
+
+        for target, pred, i in zip(Y_test, Y_pre, range(np.shape(Y_test)[0])):
+            # tt = "{:.3f}, {:.3f}".format(float(target[0]), float(target[1]))
+            # pp = "{:.3f}, {:.3f}".format(float(pred[0]), float(pred[1]))
+            # print("target:({})  predict:({})".format(tt, pp))
+
+            # tt = "({}, {})".format(int(target[0] * 40), int(target[1] * 30))
+            # pp = "({}, {})".format(int(pred[0] * 40), int(pred[1] * 30))
+            # print("target:{}  predict:{}\n".format(tt, pp))
+
+            ax.plot([int(pred[0] * 40), int(target[0] * 40)], [int(pred[1] * 30), int(target[1] * 30)], color='r',
+                     linewidth=0.5, label='error line' if i == 0 else "")
+            ax.scatter(int(pred[0] * 40), int(pred[1] * 30),  color='b', marker='.', label='prediction' if i == 0 else "")
+            ax.scatter(int(target[0] * 40), int(target[1] * 30), color='c', marker='.', label='target' if i == 0 else "")
+
+        ax.set_title("Errors of regression{}".format(suffix))
+        ax.legend()
+        plt.show()
+
+        # save fig
+        if baseline:
+            fig.savefig('./graph_output/errors_visualization_2_1.png')  # regression [200,200,200]
+        else:
+            fig.savefig('./graph_output/errors_visualization_2.png')    # regression [64,32,16]
+
+
 
 
 # save neural output to file "./interim_output/test_output_{}.txt"
-def save_results(grid_dict, Y_test, Y_pre):
+def save_results(grid_dict, Y_test, Y_pre, baseline):
     # output 1 values (classification)
     if grid_dict is not None:
 
-        txt_filename = "./interim_output/test_output_1_1.txt"
+        if baseline:
+            txt_filename = "./interim_output/test_output_1_1.txt"   # classification [200,200,200]
+        else:
+            txt_filename = "./interim_output/test_output_1.txt"   # classification [64,32,16]
 
         tt = np.zeros((np.shape(Y_test)[0], 1))
         pp = np.zeros((np.shape(Y_pre)[0], 1))
@@ -290,7 +430,10 @@ def save_results(grid_dict, Y_test, Y_pre):
 
     # output 2 values (regression)
     else:
-        txt_filename = "./interim_output/test_output_2.txt"
+        if baseline:
+            txt_filename = "./interim_output/test_output_2_1.txt"   # regression [200,200,200]
+        else:
+            txt_filename = "./interim_output/test_output_2.txt"   # regression [64,32,16]
         write_text = np.hstack((Y_test, Y_pre))
 
         # write the target output and predicted output into "test_output_2.txt"
@@ -301,131 +444,72 @@ def save_results(grid_dict, Y_test, Y_pre):
 # --------------------------------------------------------------------------------
 
 
-# 1.Classification(outputs: grid_index [discrete])
-def main1():
+
+
+# 1.Classification(outputs: grid_index [discrete]), which the hidden layer can be specified by passing a parameter to it
+def main_classification_sdae(hidden_num,is_baseline):
     # Read data from file into memory
     f_name = "./background_results/out_in_overall(gridsize2).h5"
     x_train, y_train, x_test, y_test, grid_list, SAMPLE_NUM, INPUT_DIM, OUTPUT_DIM = data_shuffle_split1(f_name)
 
-    model = Sequential()
-    model.add(Dense(units=64, activation="relu", input_dim=INPUT_DIM))
-    model.add(Dropout(0.5))
-    model.add(Dense(units=32, activation="relu"))
-    model.add(Dropout(0.5))
-    model.add(Dense(units=16, activation="relu"))
-    model.add(Dropout(0.5))
-    model.add(Dense(units=OUTPUT_DIM, activation="softmax"))
+    pretrained_layer = sdae.train_SDAE(hidden_num)
+    model = sdae.build_and_finetune_pretrained_classification(pretrained_layer=pretrained_layer, X_train=x_train,
+                                                       Y_train=y_train, X_test=x_test, Y_test=y_test)
 
-    # sgd = SGD(lr=0.05, decay=1e-3, momentum=0.9, nesterov=True)
-    sgd = SGD(lr=0.01, decay=1e-3, momentum=0.9, nesterov=True)
-    # 初始学习率设置为0.1应该太大。0.001-0.01似乎相对合适。0.01搭配1e-3的cdf可到0.5（都是64，32，16）
-    model.summary()
-    model.compile(loss='categorical_crossentropy',
-                  optimizer=sgd,
-                  metrics=['accuracy'])
-    # batch_size取太大训练曲线会比较波动，特别是准确率Acc曲线
-    model.fit(x_train, y_train, epochs=100, batch_size=8, validation_data=[x_test, y_test], verbose=1)
-    Plotting.plot_train_val(model_history=model.history.history, mark="1")
+    # plot the training curve
+    Plotting.plot_train_val(model_history=model.history.history, mark="cla_autoencoder{}".format(hidden_num))
 
     score = model.evaluate(x_test, y_test, batch_size=8)
     print(score)
 
     y_pre = model.predict(x_test, batch_size=8)
+    # classification
     if 'grid_list' in vars():
-        visualization(grid_dict=grid_list, Y_test=y_test, Y_pre=y_pre)
-        save_results(grid_dict=grid_list, Y_test=y_test, Y_pre=y_pre)
+        # generate the error line png
+        visualization(grid_dict=grid_list, Y_test=y_test, Y_pre=y_pre, baseline=is_baseline, suffix=hidden_num)
+        # save the tar&pre into "./interim_output/test_output_{}.txt"
+        save_results(grid_dict=grid_list, Y_test=y_test, Y_pre=y_pre, baseline=is_baseline)  # baseline [200,200,200]
+    # regression
     else:
-        visualization(grid_dict=None, Y_test=y_test, Y_pre=y_pre)
-        save_results(grid_dict=None, Y_test=y_test, Y_pre=y_pre)
+        visualization(grid_dict=None, Y_test=y_test, Y_pre=y_pre, baseline=is_baseline, suffix=hidden_num)
+        save_results(grid_dict=None, Y_test=y_test, Y_pre=y_pre, baseline=is_baseline)  # baseline [200,200,200]
 
 
-# 2.Regression(outputs: x,y [continuous])
-def main2():
-    # ---Reading data from file into memory---
+
+# 2.Regression(outputs: grid_index [discrete]), which the hidden layer can be specified by passing a parameter to it
+def main_regression_sdae(hidden_num,is_baseline):
+    # Read data from file into memory
     f_name = "./background_results/out_in_overall(gridsize2).h5"
-    # x_train, y_train, x_val, y_val, x_test, y_test, grid_list, SAMPLE_NUM, INPUT_DIM = data_shuffle_split(f_name)
     x_train, y_train, x_test, y_test, SAMPLE_NUM, INPUT_DIM, OUTPUT_DIM = data_shuffle_split2(f_name)
 
-    # ---Constructing neural network---
-    model = Sequential()
-    model.add(Dense(64, activation="relu", input_dim=INPUT_DIM))
-    # model.add(Dropout(0.5))
-    model.add(Dense(32, activation="relu"))
-    # model.add(Dropout(0.5))
-    model.add(Dense(16, activation="relu"))
-    model.add(Dense(8, activation="relu"))
-    model.add(Dense(4, activation="relu"))
-    # model.add(Dropout(0.5))
-    model.add(Dense(activation="tanh", output_dim=OUTPUT_DIM))
+    pretrained_layer = sdae.train_SDAE(hidden_num)
+    model = sdae.build_and_finetune_pretrained_regression(pretrained_layer=pretrained_layer, X_train=x_train,
+                                                       Y_train=y_train, X_test=x_test, Y_test=y_test)
 
-    sgd = SGD(lr=0.001, decay=1e-8, momentum=0.90, nesterov=True)
-    # 0.001搭配1e-6的cdf可以达到0.6，训练曲线平滑下降，且一直在降，未降到底
-    # momentum低于0.9的时候好像xy都训练很不到位，预测点都集中在原点区域
-    model.summary()
-    model.compile(loss='mean_squared_error',
-                  optimizer=sgd,
-                  metrics=['accuracy'])
-    # the metric function is similar to a loss function, except that the results
-    # from evaluating a metric are not used when training the model.
-
-    # ---Training a neural network---
-    model.fit(x_train, y_train, epochs=200, batch_size=4, validation_data=[x_test, y_test], verbose=1)
-    Plotting.plot_train_val(model_history=model.history.history, mark="2")
-
-    # ---Getting test set performance---
-    score = model.evaluate(x_test, y_test, batch_size=4)
-    print(score)
-
-    y_pre = model.predict(x_test, batch_size=4)
-    if 'grid_list' in vars():
-        visualization(grid_dict=grid_list, Y_test=y_test, Y_pre=y_pre)
-        save_results(grid_dict=grid_list, Y_test=y_test, Y_pre=y_pre)
-    else:
-        visualization(grid_dict=None, Y_test=y_test, Y_pre=y_pre)
-        save_results(grid_dict=None, Y_test=y_test, Y_pre=y_pre)
-
-
-# 1.Classification(outputs: grid_index [discrete]), which the hidden layer can be specified by passing a parameter
-def main(hidden_num):
-    # Read data from file into memory
-    f_name = "./background_results/out_in_overall(gridsize2).h5"
-    x_train, y_train, x_test, y_test, grid_list, SAMPLE_NUM, INPUT_DIM, OUTPUT_DIM = data_shuffle_split1(f_name)
-
-    model = Sequential()
-    model.add(Dense(units=hidden_num[0], activation="relu", input_dim=INPUT_DIM))
-    model.add(Dropout(0.5))
-    model.add(Dense(units=hidden_num[1], activation="relu"))
-    model.add(Dropout(0.5))
-    model.add(Dense(units=hidden_num[2], activation="relu"))
-    model.add(Dropout(0.5))
-    model.add(Dense(units=OUTPUT_DIM, activation="softmax"))
-
-    # sgd = SGD(lr=0.05, decay=1e-3, momentum=0.9, nesterov=True)
-    sgd = SGD(lr=0.01, decay=1e-3, momentum=0.9, nesterov=True)
-    # 初始学习率设置为0.1应该太大。0.001-0.01似乎相对合适。0.01搭配1e-3的cdf可到0.5（都是64，32，16）
-    model.summary()
-    model.compile(loss='categorical_crossentropy',
-                  optimizer=sgd,
-                  metrics=['accuracy'])
-    # batch_size取太大训练曲线会比较波动，特别是准确率Acc曲线
-    model.fit(x_train, y_train, epochs=200, batch_size=8, validation_data=[x_test, y_test], verbose=1)
-    Plotting.plot_train_val(model_history=model.history.history, mark="1_1")
+    # plot the training curve
+    Plotting.plot_train_val(model_history=model.history.history, mark="reg_autoencoder{}".format(hidden_num))
 
     score = model.evaluate(x_test, y_test, batch_size=8)
     print(score)
 
     y_pre = model.predict(x_test, batch_size=8)
+    # classification
     if 'grid_list' in vars():
-        visualization(grid_dict=grid_list, Y_test=y_test, Y_pre=y_pre)
-        save_results(grid_dict=grid_list, Y_test=y_test, Y_pre=y_pre)
+        visualization(grid_dict=grid_list, Y_test=y_test, Y_pre=y_pre, baseline=is_baseline, suffix=hidden_num)
+        save_results(grid_dict=grid_list, Y_test=y_test, Y_pre=y_pre, baseline=is_baseline)  # baseline [200,200,200]
+    # regression
     else:
-        visualization(grid_dict=None, Y_test=y_test, Y_pre=y_pre)
-        save_results(grid_dict=None, Y_test=y_test, Y_pre=y_pre)
+        # generate the error line png
+        visualization(grid_dict=None, Y_test=y_test, Y_pre=y_pre, baseline=is_baseline, suffix=hidden_num)
+        # save the tar&pre into "./interim_output/test_output_{}.txt"
+        save_results(grid_dict=None, Y_test=y_test, Y_pre=y_pre, baseline=is_baseline)  # baseline [200,200,200]
+
+
 
 
 if __name__ == "__main__":
 
-
-    # main1()
-    # main([200, 200, 200])
-    main2()
+    # main_classification_sdae([64, 32, 16], is_baseline=False)
+    # main_classification_sdae([200, 200, 200], is_baseline=True)
+    # main_regression_sdae([64, 32, 16], is_baseline=False)
+    main_regression_sdae([200, 200, 200], is_baseline=True)
