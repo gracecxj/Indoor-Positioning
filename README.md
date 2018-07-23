@@ -18,10 +18,10 @@
 ![error line classification(200,200,200)](https://github.com/gracecxj/Indoor-Positioning/blob/master/results(gridsize2%2Bauto)/errors_visualization_1_1.png)
 
 ![error line regression(64,32,16)](https://github.com/gracecxj/Indoor-Positioning/blob/master/results(gridsize2%2Bauto)/errors_visualization_2.png)
-![error line regression(64,32,16)](https://github.com/gracecxj/Indoor-Positioning/blob/master/results(gridsize2%2Bauto)/errors_visualization_2_1.png)
+![error line regression(200，200，200)](https://github.com/gracecxj/Indoor-Positioning/blob/master/results(gridsize2%2Bauto)/errors_visualization_2_1.png)
 
-the foloowing plot is the error in meters results comparision of the above 4 models
-![cdf plot of 4 models]https://github.com/gracecxj/Indoor-Positioning/blob/master/results(gridsize2%2Bauto)/CDF(autoencoder).png
+The foloowing plot is the error in meters results comparision of the above 4 models
+![cdf plot of 4 models](https://github.com/gracecxj/Indoor-Positioning/blob/master/results(gridsize2%2Bauto)/CDF(autoencoder).png)
 
 **To be continue:**
 - implement the Hidden Markov Model to enforce time consistency(2 adjacent timestep's location do not differ too much -> tragectory continuity), also think about a way to integrate the accelerometer and magnetometer data to the inputs.
