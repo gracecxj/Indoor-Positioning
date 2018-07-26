@@ -171,10 +171,9 @@ def save_error_in_meters(mark, fn_suffix):
 #     fig.savefig("cdf_2.png")
 
 
-def plot_train_val(model_history, mark):
+def plot_train_val(model_history, is_classification, suffix):
 
     fig = plt.figure(figsize=(6, 8))
-    # plt.title("experiment\t{}'s visualization".format(mark))
 
     ax1 = fig.add_subplot(2, 1, 1)
     ax1.plot(model_history['loss'], label="train_loss")
@@ -190,8 +189,14 @@ def plot_train_val(model_history, mark):
     ax2.set_ylabel("Accuracy")
     ax2.legend()
 
-    plt.show()
-    fig.savefig("./graph_output/Acc_Loss_curve_{}.png".format(mark))
+    if is_classification:
+        ax1.set_title("classification model{}".format(suffix))
+        plt.show()
+        fig.savefig("./graph_output/Acc_Loss_curve_cla_{}.png".format(suffix))
+    else:
+        ax1.set_title("regression model{}".format(suffix))
+        plt.show()
+        fig.savefig("./graph_output/Acc_Loss_curve_reg_{}.png".format(suffix))
 
 
 # correct implementation version

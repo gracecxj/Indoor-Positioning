@@ -133,6 +133,6 @@ def build_and_finetune_pretrained_regression(pretrained_layer, X_train, Y_train,
     pretrained_network.compile(optimizer=sgd(lr=0.001, decay=1e-3, momentum=0.9, nesterov=True), loss='mean_squared_error', metrics=['accuracy'])
 
     # Fine tuning
-    pretrained_network.fit(X_train, Y_train, epochs=200, batch_size=8, validation_data=[X_test, Y_test])
+    pretrained_network.fit(X_train, Y_train, epochs=100, batch_size=8, validation_data=[X_test, Y_test])
 
     return pretrained_network

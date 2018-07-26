@@ -306,8 +306,8 @@ def visualization(grid_dict, Y_test, Y_pre, baseline, suffix):
         ax.set_xticks(my_x_ticks, minor=True)
         ax.set_yticks(my_y_ticks, minor=True)
 
-        ax.set_xlim((0, 40))
-        ax.set_ylim((0, 30))
+        # ax.set_xlim((0, 40))
+        # ax.set_ylim((0, 30))
 
         # 设置x，y值域
         ax.set_xlim(left=0, right=40)
@@ -457,7 +457,7 @@ def main_classification_sdae(hidden_num,is_baseline):
                                                        Y_train=y_train, X_test=x_test, Y_test=y_test)
 
     # plot the training curve
-    Plotting.plot_train_val(model_history=model.history.history, mark="cla_autoencoder{}".format(hidden_num))
+    Plotting.plot_train_val(model_history=model.history.history, is_classification=True, suffix="_auto{}".format(hidden_num))
 
     score = model.evaluate(x_test, y_test, batch_size=8)
     print(score)
@@ -487,7 +487,7 @@ def main_regression_sdae(hidden_num,is_baseline):
                                                        Y_train=y_train, X_test=x_test, Y_test=y_test)
 
     # plot the training curve
-    Plotting.plot_train_val(model_history=model.history.history, mark="reg_autoencoder{}".format(hidden_num))
+    Plotting.plot_train_val(model_history=model.history.history, is_classification=False, suffix="_auto{}".format(hidden_num))
 
     score = model.evaluate(x_test, y_test, batch_size=8)
     print(score)
