@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="30055852-64aa-485b-aad2-50a5cb2e9e6e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Plotting.py" afterPath="$PROJECT_DIR$/Plotting.py" />
-      <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change beforePath="$PROJECT_DIR$/main_sdae.py" afterPath="$PROJECT_DIR$/main_sdae.py" />
       <change beforePath="$PROJECT_DIR$/sdae.py" afterPath="$PROJECT_DIR$/sdae.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,8 +45,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="428" column="0" lean-forward="false" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
+            <state relative-caret-position="194">
+              <caret line="410" column="27" lean-forward="true" selection-start-line="410" selection-start-column="27" selection-end-line="410" selection-end-column="27" />
               <folding>
                 <element signature="e#560#827#0" expanded="false" />
                 <element signature="e#867#1748#0" expanded="false" />
@@ -66,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Plotting.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Plotting.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Plotting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="173" column="61" lean-forward="false" selection-start-line="173" selection-start-column="61" selection-end-line="173" selection-end-column="61" />
+            <state relative-caret-position="1007">
+              <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#248#841#0" expanded="false" />
@@ -85,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_sdae.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main_sdae.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_sdae.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="508" column="0" lean-forward="true" selection-start-line="508" selection-start-column="0" selection-end-line="508" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="504" column="0" lean-forward="false" selection-start-line="503" selection-start-column="0" selection-end-line="504" selection-end-column="0" />
               <folding>
                 <element signature="e#531#798#0" expanded="false" />
                 <element signature="e#838#1719#0" expanded="false" />
@@ -108,12 +105,12 @@
       <file leaf-file-name="sdae.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sdae.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+            <state relative-caret-position="913">
+              <caret line="133" column="33" lean-forward="true" selection-start-line="133" selection-start-column="33" selection-end-line="133" selection-end-column="33" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
-                <element signature="e#595#2249#0" expanded="false" />
-                <element signature="e#2332#4385#0" expanded="false" />
+                <element signature="e#604#2258#0" expanded="false" />
+                <element signature="e#2341#4394#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -286,19 +283,19 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="csv" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/graph_output" />
-      <recent name="$PROJECT_DIR$/other code" />
-      <recent name="$PROJECT_DIR$/interim_output" />
-      <recent name="$PROJECT_DIR$/interim_results" />
-      <recent name="$PROJECT_DIR$/background" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/masking area" />
       <recent name="$PROJECT_DIR$/background_results" />
       <recent name="$PROJECT_DIR$/background" />
       <recent name="$PROJECT_DIR$/foreground" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/result(auto+dropout)" />
+      <recent name="$PROJECT_DIR$/graph_output" />
+      <recent name="$PROJECT_DIR$/other code" />
+      <recent name="$PROJECT_DIR$/interim_output" />
+      <recent name="$PROJECT_DIR$/interim_results" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -654,14 +651,14 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265097" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28956625" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28956625" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285568" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2620266" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32705882" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14874697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28536782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280277" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32659662" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2724333" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33981577" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -845,17 +842,12 @@ ax.scatter(int(target[0] * 40), int(target[1] * 30), label='target', color='c', 
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/interim_output/print(regression)" />
-    <entry file="file://$PROJECT_DIR$/errors_visualization_1.png" />
-    <entry file="file://$PROJECT_DIR$/epoch_plot.png" />
-    <entry file="file://$PROJECT_DIR$/training_curve.png" />
-    <entry file="file://$PROJECT_DIR$/AccLoss_curve.png" />
     <entry file="file://$PROJECT_DIR$/Acc_Loss_curve.png" />
     <entry file="file://$PROJECT_DIR$/errors_visualization_2.png" />
     <entry file="file://$PROJECT_DIR$/cdf_2.png" />
     <entry file="file://$PROJECT_DIR$/cdf_1.png" />
-    <entry file="file://$PROJECT_DIR$/interim_output/test_output_1.txt" />
-    <entry file="file://$PROJECT_DIR$/interim_output/test_output_2.txt" />
+    <entry file="file://$PROJECT_DIR$/result(auto+dropout)/test_output_1.txt" />
+    <entry file="file://$PROJECT_DIR$/result(auto+dropout)/test_output_2.txt" />
     <entry file="file://$PROJECT_DIR$/interim_output/print(classification).txt" />
     <entry file="file://$USER_HOME$/anaconda3/envs/tensorflow/lib/python3.6/site-packages/numpy/lib/function_base.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -997,17 +989,11 @@ ax.scatter(int(target[0] * 40), int(target[1] * 30), label='target', color='c', 
     <entry file="file://$PROJECT_DIR$/Acc_Loss_curve_2_autoencoder[64, 32, 16].png" />
     <entry file="file://$PROJECT_DIR$/graph_output/errors_visualization.png" />
     <entry file="file://$PROJECT_DIR$/graph_output/errors_visualization11.png" />
-    <entry file="file://$PROJECT_DIR$/graph_output/errors_visualization_1_1.png" />
     <entry file="file://$PROJECT_DIR$/graph_output/Acc_Loss_curve_cla_autoencoder[64, 32, 16].png" />
-    <entry file="file://$PROJECT_DIR$/graph_output/errors_visualization_1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="428" column="0" lean-forward="false" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
+        <state relative-caret-position="194">
+          <caret line="410" column="27" lean-forward="true" selection-start-line="410" selection-start-column="27" selection-end-line="410" selection-end-column="27" />
           <folding>
             <element signature="e#560#827#0" expanded="false" />
             <element signature="e#867#1748#0" expanded="false" />
@@ -1023,39 +1009,45 @@ ax.scatter(int(target[0] * 40), int(target[1] * 30), label='target', color='c', 
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Plotting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="173" column="61" lean-forward="false" selection-start-line="173" selection-start-column="61" selection-end-line="173" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#248#841#0" expanded="false" />
-            <element signature="e#890#2827#0" expanded="false" />
-            <element signature="e#3041#4591#0" expanded="false" />
-            <element signature="e#4033#4071#0" expanded="false" />
-            <element signature="e#4594#4695#0" expanded="false" />
-            <element signature="e#5918#6749#0" expanded="false" />
-            <element signature="e#6823#6988#0" expanded="false" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_cla_autoencoder[200, 200, 200].png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sdae.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-            <element signature="e#595#2249#0" expanded="false" />
-            <element signature="e#2332#4385#0" expanded="false" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_cla_autoencoder[64, 32, 16].png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_reg_autoencoder[64, 32, 16].png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_reg_autoencoder[200, 200, 200].png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result(auto+dropout)/errors_visualization_1_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result(auto+dropout)/errors_visualization_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result(auto+dropout)/errors_visualization_2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main_sdae.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="508" column="0" lean-forward="true" selection-start-line="508" selection-start-column="0" selection-end-line="508" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="504" column="0" lean-forward="false" selection-start-line="503" selection-start-column="0" selection-end-line="504" selection-end-column="0" />
           <folding>
             <element signature="e#531#798#0" expanded="false" />
             <element signature="e#838#1719#0" expanded="false" />
@@ -1066,6 +1058,35 @@ ax.scatter(int(target[0] * 40), int(target[1] * 30), label='target', color='c', 
             <element signature="e#6562#9473#1" expanded="false" />
             <element signature="e#9752#9807#0" expanded="false" />
             <element signature="e#14825#16521#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdae.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="913">
+          <caret line="133" column="33" lean-forward="true" selection-start-line="133" selection-start-column="33" selection-end-line="133" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#604#2258#0" expanded="false" />
+            <element signature="e#2341#4394#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plotting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1007">
+          <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#248#841#0" expanded="false" />
+            <element signature="e#890#2827#0" expanded="false" />
+            <element signature="e#3041#4591#0" expanded="false" />
+            <element signature="e#4033#4071#0" expanded="false" />
+            <element signature="e#4594#4695#0" expanded="false" />
+            <element signature="e#5918#6749#0" expanded="false" />
+            <element signature="e#6823#6988#0" expanded="false" />
           </folding>
         </state>
       </provider>

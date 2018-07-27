@@ -1,5 +1,5 @@
 from keras.models import Model
-from keras.layers import Dense, Input
+from keras.layers import Dense, Input, Dropout
 from keras.optimizers import sgd
 from sklearn import preprocessing
 import h5py
@@ -106,15 +106,21 @@ def build_and_finetune_pretrained_classification(pretrained_layer, X_train, Y_tr
     # output layer to perform fine tuning (supervised learning)
     input_layer = Input(shape=(INPUT_DIM,))
     layer1 = pretrained_layer[0](input_layer)
+    layer1 = Dropout(0.5)(layer1)
+
     layer2 = pretrained_layer[1](layer1)
+    layer2 = Dropout(0.5)(layer2)
+
     layer3 = pretrained_layer[2](layer2)
+    layer3 = Dropout(0.5)(layer3)
+
     ouput_layer = Dense(NUM_CLASS, activation="softmax", name="output_layer")(layer3)
 
     pretrained_network = Model(inputs=input_layer, outputs=ouput_layer)
     pretrained_network.compile(optimizer=sgd(lr=0.001, decay=1e-3, momentum=0.9, nesterov=True), loss='categorical_crossentropy', metrics=['accuracy'])
 
     # Fine tuning
-    pretrained_network.fit(X_train, Y_train, epochs=100, batch_size=8, validation_data=[X_test, Y_test])
+    pretrained_network.fit(X_train, Y_train, epochs=200, batch_size=1, validation_data=[X_test, Y_test])
 
     return pretrained_network
 
@@ -125,14 +131,20 @@ def build_and_finetune_pretrained_regression(pretrained_layer, X_train, Y_train,
     # output layer to perform fine tuning (supervised learning)
     input_layer = Input(shape=(INPUT_DIM,))
     layer1 = pretrained_layer[0](input_layer)
+    layer1 = Dropout(0.5)(layer1)
+
     layer2 = pretrained_layer[1](layer1)
+    layer2 = Dropout(0.5)(layer2)
+
     layer3 = pretrained_layer[2](layer2)
+    layer3 = Dropout(0.5)(layer3)
+
     ouput_layer = Dense(2, activation="tanh", name="output_layer")(layer3)
 
     pretrained_network = Model(inputs=input_layer, outputs=ouput_layer)
-    pretrained_network.compile(optimizer=sgd(lr=0.001, decay=1e-3, momentum=0.9, nesterov=True), loss='mean_squared_error', metrics=['accuracy'])
+    pretrained_network.compile(optimizer=sgd(lr=0.001, decay=1e-8, momentum=0.9, nesterov=True), loss='mean_squared_error', metrics=['accuracy'])
 
     # Fine tuning
-    pretrained_network.fit(X_train, Y_train, epochs=100, batch_size=8, validation_data=[X_test, Y_test])
+    pretrained_network.fit(X_train, Y_train, epochs=200, batch_size=1, validation_data=[X_test, Y_test])
 
     return pretrained_network
