@@ -92,27 +92,27 @@ def transfer_error_in_meters(data, flag):
 
 # read neural(target & prediction) from "test_output_{}.txt",
 # and write error in meters into file "e_{}.txt"
-def save_error_in_meters(mark, fn_suffix):
+def save_error_in_meters(mark, which_comparison, fn_suffix):
     '''
 
     :param mark: 1 - classification, 2 - regression
     :param fn_suffix: identify which model has been used(classification/regression, what is the hidden layer's structure)
     :return: no return, but write error in meters in file "./interim_output/e_{}.txt"
     '''
-    fn = './interim_output/test_output_{}.txt'.format(fn_suffix)
+    fn = './comparison{}/test_output_{}.txt'.format(which_comparison,fn_suffix)
     # experiment = ["classification", "regression"]
     target_and_neural_out = np.loadtxt(fn, delimiter=',')
 
     # classification
     if mark == 1:
         error_in_meters = transfer_error_in_meters(target_and_neural_out, flag=True)
-        with open("./interim_output/e_{}.txt".format(fn_suffix), "wb+") as f:
+        with open("./comparison{}/e_{}.txt".format(which_comparison, fn_suffix), "w") as f:
             np.savetxt(f, error_in_meters, delimiter=",", newline='\n')
 
     # regression
     else:
         error_in_meters = transfer_error_in_meters(target_and_neural_out, flag=False)
-        with open("./interim_output/e_{}.txt".format(fn_suffix), "wb+") as f:
+        with open("./comparison{}/e_{}.txt".format(which_comparison, fn_suffix), "w") as f:
             np.savetxt(f, error_in_meters, delimiter=",", newline='\n')
 
     # # Choose how many bins you want here
@@ -202,36 +202,125 @@ def plot_train_val(model_history, is_classification, suffix):
 # correct implementation version
 def cdf_plot(data, name, number):
     ecdf = sm.distributions.ECDF(data)
-    x = np.linspace(min(data), max(data), number)
+
+    # x = np.linspace(min(data), max(data), number)
+    lower_bound = ecdf.x[int(620*0.1)]
+    upper_bound = ecdf.x[int(620*0.9)]
+    x = np.linspace(lower_bound, upper_bound, number)
     y = ecdf(x)
+
+    print("0.5 -> x={}\t\t{}".format(round(ecdf.x[310], 3), name))
 
     # plt.step(x, y, label=name)
     plt.plot(x, y, label=name)
 
 
-# 该函数将网络输出结果和目标对比的文件"interim_output/test_output_{}.txt"转为米计误差，并写入"./interim_output/e_{}.txt"
-def main():
-    fn_suffix_list = ["1", "1_1", "2", "2_1"]
+# 该函数将网络输出结果和目标对比的文件"interim_output/test_output_{}.txt"转为米计误差，并写入"./error_output/e_{}.txt"
+# comparison1: "simple" vs "simple+dropout"
+def main1():
+    fn_suffix_list = ["m1_1", "m1_1_1", "m1_2", "m1_2_1",
+                      "m2_1", "m2_1_1", "m2_2", "m2_2_1"]
 
     # classification(64, 32, 16)
-    save_error_in_meters(mark=1, fn_suffix=fn_suffix_list[0])
+    save_error_in_meters(mark=1, which_comparison=1, fn_suffix=fn_suffix_list[0])
+    save_error_in_meters(mark=1, which_comparison=1, fn_suffix=fn_suffix_list[4])
+
     # classification(200,200,200)
-    save_error_in_meters(mark=1, fn_suffix=fn_suffix_list[1])
+    save_error_in_meters(mark=1, which_comparison=1, fn_suffix=fn_suffix_list[1])
+    save_error_in_meters(mark=1, which_comparison=1, fn_suffix=fn_suffix_list[5])
+
     # regression(64, 32, 16)
-    save_error_in_meters(mark=2, fn_suffix=fn_suffix_list[2])
+    save_error_in_meters(mark=2, which_comparison=1, fn_suffix=fn_suffix_list[2])
+    save_error_in_meters(mark=2, which_comparison=1, fn_suffix=fn_suffix_list[6])
+
     # regression(200,200,200)
-    save_error_in_meters(mark=2, fn_suffix=fn_suffix_list[3])
+    save_error_in_meters(mark=2, which_comparison=1, fn_suffix=fn_suffix_list[3])
+    save_error_in_meters(mark=2, which_comparison=1, fn_suffix=fn_suffix_list[7])
 
     fig = plt.figure()
-    models = ["classification(64,32,16)", "classification(200,200,200)", "regression(64,32,16)", "regression(200,200,200)"]
+    models = ["C(64,32,16)", "C(200,200,200)", "R(64,32,16)", "R(200,200,200)",
+              "C+dropout(64,32,16)", "C+dropout(200,200,200)", "R+dropout(64,32,16)", "R+dropout(200,200,200)"]
     for suffix, model_name in zip(fn_suffix_list, models):
-        data = np.loadtxt("./interim_output/e_{}.txt".format(suffix))
+        data = np.loadtxt("./comparison1/e_{}.txt".format(suffix))
         cdf_plot(data, model_name, 100)
 
     plt.legend(loc=8, bbox_to_anchor=(0.65, 0.3), borderaxespad=0.)
     plt.show()
-    fig.savefig("CDF.png")
+    fig.savefig("CDF1.png")
+    print("\n")
+
+
+
+# comparison1: "simple" vs "simple+autoencoder"
+def main2():
+    fn_suffix_list = ["m1_1", "m1_1_1", "m1_2", "m1_2_1",
+                      "m2_1", "m2_1_1", "m2_2", "m2_2_1"]
+
+    # classification(64, 32, 16)
+    save_error_in_meters(mark=1, which_comparison=2, fn_suffix=fn_suffix_list[0])
+    save_error_in_meters(mark=1, which_comparison=2, fn_suffix=fn_suffix_list[4])
+
+    # classification(200,200,200)
+    save_error_in_meters(mark=1, which_comparison=2, fn_suffix=fn_suffix_list[1])
+    save_error_in_meters(mark=1, which_comparison=2, fn_suffix=fn_suffix_list[5])
+
+    # regression(64, 32, 16)
+    save_error_in_meters(mark=2, which_comparison=2, fn_suffix=fn_suffix_list[2])
+    save_error_in_meters(mark=2, which_comparison=2, fn_suffix=fn_suffix_list[6])
+
+    # regression(200,200,200)
+    save_error_in_meters(mark=2, which_comparison=2, fn_suffix=fn_suffix_list[3])
+    save_error_in_meters(mark=2, which_comparison=2, fn_suffix=fn_suffix_list[7])
+
+    fig = plt.figure()
+    models = ["C(64,32,16)", "C(200,200,200)", "R(64,32,16)", "R(200,200,200)",
+              "C+autoencoder(64,32,16)", "C+autoencoder(200,200,200)", "R+autoencoder(64,32,16)", "R+autoencoder(200,200,200)"]
+    for suffix, model_name in zip(fn_suffix_list, models):
+        data = np.loadtxt("./comparison2/e_{}.txt".format(suffix))
+        cdf_plot(data, model_name, 100)
+
+    plt.legend(loc=8, bbox_to_anchor=(0.65, 0.3), borderaxespad=0.)
+    plt.show()
+    fig.savefig("CDF2.png")
+    print("\n")
+
+
+
+# comparison3: "auto" vs "auto+dropout"
+def main3():
+    fn_suffix_list = ["m1_1", "m1_1_1", "m1_2", "m1_2_1",
+                      "m2_1", "m2_1_1", "m2_2", "m2_2_1"]
+
+    # classification(64, 32, 16)
+    save_error_in_meters(mark=1, which_comparison=3, fn_suffix=fn_suffix_list[0])
+    save_error_in_meters(mark=1, which_comparison=3, fn_suffix=fn_suffix_list[4])
+
+    # classification(200,200,200)
+    save_error_in_meters(mark=1, which_comparison=3, fn_suffix=fn_suffix_list[1])
+    save_error_in_meters(mark=1, which_comparison=3, fn_suffix=fn_suffix_list[5])
+
+    # regression(64, 32, 16)
+    save_error_in_meters(mark=2, which_comparison=3, fn_suffix=fn_suffix_list[2])
+    save_error_in_meters(mark=2, which_comparison=3, fn_suffix=fn_suffix_list[6])
+
+    # regression(200,200,200)
+    save_error_in_meters(mark=2, which_comparison=3, fn_suffix=fn_suffix_list[3])
+    save_error_in_meters(mark=2, which_comparison=3, fn_suffix=fn_suffix_list[7])
+
+    fig = plt.figure()
+    models = ["C+auto(64,32,16)", "C+auto(200,200,200)", "R+auto(64,32,16)", "R+auto(200,200,200)",
+              "C+auto+dropout(64,32,16)", "C+auto+dropout(200,200,200)", "R+auto+dropout(64,32,16)", "R+auto+dropout(200,200,200)"]
+    for suffix, model_name in zip(fn_suffix_list, models):
+        data = np.loadtxt("./comparison3/e_{}.txt".format(suffix))
+        cdf_plot(data, model_name, 100)
+
+    plt.legend(loc=8, bbox_to_anchor=(0.65, 0.3), borderaxespad=0.)
+    plt.show()
+    fig.savefig("CDF3.png")
+    print("\n")
 
 
 if __name__ == '__main__':
-    main()
+    main1()
+    main2()
+    main3()
