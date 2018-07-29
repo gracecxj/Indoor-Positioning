@@ -15,7 +15,7 @@
 
 **Current results visualization:**
 
-The following plots is the "error in meters cdf" of different models. More detailed plots(such as error line, training curve) can be found in results(*) directory.
+The following plots is the "error in meters cdf" of different models. More detailed plots(such as error line plot, training curve plot .etc) can be found in results(*) directory. Note: C indicates classification models, while R indicates regression models.
 
 simple vs dropout:
 
