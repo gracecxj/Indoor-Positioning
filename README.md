@@ -14,15 +14,19 @@
 - compare different network strcuctures(\[32,64,16\] and \[200,200,200\]). Meantime, see how dropout layer and pretrained network helps the prediction process.
 
 **Current results visualization:**
+
 The following plots is the "error in meters cdf" of different models.(details in the plot)
 
-simple vs dropout
+simple vs dropout:
+
 ![simple vs dropout](https://github.com/gracecxj/Indoor-Positioning/blob/master/CDF1.png)
 
-simple vs autoencoder
+simple vs autoencoder:
+
 ![simple vs autoencoder](https://github.com/gracecxj/Indoor-Positioning/blob/master/CDF2.png)
 
-autoencoder vs autoencoder+dropout
+autoencoder vs autoencoder+dropout:
+
 ![autoencoder vs autoencoder+dropout](https://github.com/gracecxj/Indoor-Positioning/blob/master/CDF3.png)
 
 
