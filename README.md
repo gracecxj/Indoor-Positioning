@@ -11,11 +11,11 @@
 - preprocessed the data file, and converted them into standard inputs and outputs that the neural nets required.
 - constructed 2 simple neural nets(classification, regression) to predict the location from wifi fingerprint
 - implemented autoencoder layerwise to pretrain the neural nets(make use of the large amount of unlabeled wifi data collected previously)
-- compare different network strcuctures(\[32,64,16\] and \[200,200,200\]). Meantime, see how dropout layer and pretrained network helps the prediction process.
+- compare different network strcuctures(\[32,64,16\] and \[200,200,200\]). Meantime, see how dropout layer and autoencoder pretrained weights helps the prediction process.
 
 **Current results visualization:**
 
-The following plots is the "error in meters cdf" of different models.(details in the plot)
+The following plots is the "error in meters cdf" of different models. More detailed plots(such as error line, training curve) can be found in results(*) directory.
 
 simple vs dropout:
 
