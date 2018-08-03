@@ -209,13 +209,60 @@ def cdf_plot(data, name, number):
     x = np.linspace(lower_bound, upper_bound, number)
     y = ecdf(x)
 
-    print("0.5 -> x={}\t\t{}".format(round(ecdf.x[310], 3), name))
+    print("x ~ [{}, {}]".format(round(ecdf.x[0], 3), round(ecdf.x[620], 3)))
+    print("mid_x={}\t\t{}\n".format(round(ecdf.x[310], 3), name))
+
 
     # plt.step(x, y, label=name)
     plt.plot(x, y, label=name)
 
 
 # 该函数将网络输出结果和目标对比的文件"interim_output/test_output_{}.txt"转为米计误差，并写入"./error_output/e_{}.txt"
+def main(which_kind_of_model):
+    if which_kind_of_model is "m1":
+        added_label = ""
+    elif which_kind_of_model is "m2":
+        added_label = "+dropout"
+    elif which_kind_of_model is "m3":
+        added_label = "+autoencoder"
+    elif which_kind_of_model is "m4":
+        added_label = "+dropout+auto"
+
+    fn_suffix_list = ["1", "2", "3", "4"]
+
+    fig = plt.figure()
+    models = ["C{}(64,32,16)".format(added_label), "C{}(200,200,200)".format(added_label)]
+    for suffix, model_name in zip(fn_suffix_list[0:2], models):
+        data = np.loadtxt("./errors/errors_{}_{}.txt".format(which_kind_of_model, suffix))
+        cdf_plot(data, model_name, 100)
+    plt.legend(loc=8, bbox_to_anchor=(0.65, 0.3), borderaxespad=0.)
+    plt.show()
+    fig.savefig("cdf_{}_1.png".format(which_kind_of_model))
+    print("\n")
+
+    fig = plt.figure()
+    models = ["R{}(64,32,16)".format(added_label), "R{}(200,200,200)".format(added_label)]
+    for suffix, model_name in zip(fn_suffix_list[2:], models):
+        data = np.loadtxt("./errors/errors_{}_{}.txt".format(which_kind_of_model, suffix))
+        cdf_plot(data, model_name, 100)
+    plt.legend(loc=8, bbox_to_anchor=(0.65, 0.3), borderaxespad=0.)
+    plt.show()
+    fig.savefig("cdf_{}_2.png".format(which_kind_of_model))
+    print("\n")
+
+    fig = plt.figure()
+    models = ["C{}(64,32,16)".format(added_label), "C{}(200,200,200)".format(added_label),
+              "R{}(64,32,16)".format(added_label), "R{}(200,200,200)".format(added_label)]
+    for suffix, model_name in zip(fn_suffix_list, models):
+        data = np.loadtxt("./errors/errors_{}_{}.txt".format(which_kind_of_model, suffix))
+        cdf_plot(data, model_name, 100)
+    plt.legend(loc=8, bbox_to_anchor=(0.65, 0.3), borderaxespad=0.)
+    plt.show()
+    fig.savefig("cdf_{}_0.png".format(which_kind_of_model))
+    print("\n")
+
+
+
 # comparison1: "simple" vs "simple+dropout"
 def main1():
     fn_suffix_list = ["m1_1", "m1_1_1", "m1_2", "m1_2_1",
@@ -321,6 +368,10 @@ def main3():
 
 
 if __name__ == '__main__':
-    main1()
-    main2()
-    main3()
+    # main1()
+    # main2()
+    # main3()
+    main("m1")
+    main("m2")
+    main("m3")
+    main("m4")

@@ -364,15 +364,15 @@ def main_classification(hidden_num, is_baseline):
 
     model = Sequential()
     model.add(Dense(units=hidden_num[0], activation="relu", input_dim=INPUT_DIM))
-    model.add(Dropout(0.5))
+    # model.add(Dropout(0.5))
     model.add(Dense(units=hidden_num[1], activation="relu"))
-    model.add(Dropout(0.5))
+    # model.add(Dropout(0.5))
     model.add(Dense(units=hidden_num[2], activation="relu"))
-    model.add(Dropout(0.5))
+    # model.add(Dropout(0.5))
     model.add(Dense(units=OUTPUT_DIM, activation="softmax"))
 
     # sgd = SGD(lr=0.05, decay=1e-3, momentum=0.9, nesterov=True)
-    sgd = SGD(lr=0.01, decay=1e-3, momentum=0.9, nesterov=True)
+    sgd = SGD(lr=0.01, decay=1e-2, momentum=0.9, nesterov=True)
     # 初始学习率设置为0.1应该太大。0.001-0.01似乎相对合适。0.01搭配1e-3的cdf可到0.5（都是64，32，16）
     model.summary()
     model.compile(loss='categorical_crossentropy',
@@ -408,13 +408,13 @@ def main_regression(hidden_num, is_baseline):
     # ---Constructing neural network---
     model = Sequential()
     model.add(Dense(hidden_num[0], activation="relu", input_dim=INPUT_DIM))
-    model.add(Dropout(0.5))
+    # model.add(Dropout(0.5))
     model.add(Dense(hidden_num[1], activation="relu"))
-    model.add(Dropout(0.5))
+    # model.add(Dropout(0.5))
     model.add(Dense(hidden_num[2], activation="relu"))
     # model.add(Dense(8, activation="relu"))
     # model.add(Dense(4, activation="relu"))
-    model.add(Dropout(0.5))
+    # model.add(Dropout(0.5))
     model.add(Dense(activation="tanh", output_dim=OUTPUT_DIM))
 
     sgd = SGD(lr=0.01, decay=1e-8, momentum=0.90, nesterov=True)
@@ -489,6 +489,6 @@ def main(hidden_num):
 if __name__ == "__main__":
 
     # main_classification([64, 32, 16], is_baseline=False)
-    # main_classification([200, 200, 200], is_baseline=True)
+    main_classification([400, 500, 400], is_baseline=True)
     # main_regression([64, 32, 16], is_baseline=False)
-    main_regression([200, 200, 200], is_baseline=True)
+    # main_regression([200, 200, 200], is_baseline=True)

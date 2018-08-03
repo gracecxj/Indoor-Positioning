@@ -2,9 +2,72 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30055852-64aa-485b-aad2-50a5cb2e9e6e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/other.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/CDF1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/CDF2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/CDF3.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Plotting.py" afterPath="$PROJECT_DIR$/Plotting.py" />
+      <change beforePath="$PROJECT_DIR$/comparison3/e_m1_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/e_m1_1_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/e_m1_2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/e_m1_2_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/e_m2_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/e_m2_1_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/e_m2_2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/e_m2_2_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/test_output_m1_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/test_output_m1_1_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/test_output_m1_2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/test_output_m1_2_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/test_output_m2_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/test_output_m2_1_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/test_output_m2_2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/comparison3/test_output_m2_2_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/Acc_Loss_curve_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/Acc_Loss_curve_1_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/Acc_Loss_curve_2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/CDF(dropout+gridsize1).png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/CDF(non-dropout+gridsize1).png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/e_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/e_1_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/e_2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/errors_visualization_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/errors_visualization_1_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/errors_visualization_2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/test_output_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/test_output_1_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize1)/test_output_2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_cla_autoencoder[200, 200, 200].png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_cla_autoencoder[64, 32, 16].png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_reg_autoencoder[200, 200, 200].png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_reg_autoencoder[64, 32, 16].png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/CDF(autoencoder).png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/e_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/e_1_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/e_2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/e_2_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/errors_visualization_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/errors_visualization_1_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/errors_visualization_2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/errors_visualization_2_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/test_output_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/test_output_1_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/test_output_2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+auto)/test_output_2_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/Acc_Loss_curve_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/Acc_Loss_curve_1_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/Acc_Loss_curve_2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/CDF(dropout+gridsize2).png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/e_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/e_1_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/e_2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/errors_visualization_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/errors_visualization_1_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/errors_visualization_2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/test_output_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/test_output_1_1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/results(gridsize2+dropout)/test_output_2.txt" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,8 +109,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="410" column="27" lean-forward="false" selection-start-line="410" selection-start-column="27" selection-end-line="410" selection-end-column="27" />
+            <state relative-caret-position="665">
+              <caret line="124" column="53" lean-forward="false" selection-start-line="124" selection-start-column="53" selection-end-line="124" selection-end-column="53" />
               <folding>
                 <element signature="e#560#827#0" expanded="false" />
                 <element signature="e#867#1748#0" expanded="false" />
@@ -57,8 +120,8 @@
                 <element signature="e#5367#6528#0" expanded="false" />
                 <element signature="e#6670#10954#0" expanded="false" />
                 <element signature="e#11082#12774#0" expanded="false" />
-                <element signature="e#12967#14890#0" expanded="false" />
-                <element signature="e#17283#19036#1" expanded="false" />
+                <element signature="e#14992#17292#0" expanded="false" />
+                <element signature="e#17295#19048#1" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,15 +130,17 @@
       <file leaf-file-name="Plotting.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Plotting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="247" column="14" lean-forward="false" selection-start-line="247" selection-start-column="14" selection-end-line="247" selection-end-column="14" />
+            <state relative-caret-position="373">
+              <caret line="244" column="47" lean-forward="false" selection-start-line="244" selection-start-column="47" selection-end-line="244" selection-end-column="47" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#248#841#0" expanded="false" />
                 <element signature="e#890#2827#0" expanded="false" />
-                <element signature="e#3059#4652#0" expanded="false" />
                 <element signature="e#4655#4756#0" expanded="false" />
                 <element signature="e#5979#6810#0" expanded="false" />
+                <element signature="e#9336#10743#0" expanded="false" />
+                <element signature="e#10812#12235#0" expanded="false" />
+                <element signature="e#12296#13743#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -84,16 +149,16 @@
       <file leaf-file-name="main_sdae.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_sdae.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4351">
+            <state relative-caret-position="2493">
               <caret line="504" column="0" lean-forward="false" selection-start-line="503" selection-start-column="0" selection-end-line="504" selection-end-column="0" />
               <folding>
                 <element signature="e#531#798#0" expanded="false" />
                 <element signature="e#838#1719#0" expanded="false" />
-                <element signature="e#1757#3811#0" expanded="false" />
                 <element signature="e#4077#4416#0" expanded="false" />
                 <element signature="e#4698#5300#0" expanded="false" />
                 <element signature="e#5338#6499#0" expanded="false" />
                 <element signature="e#6562#9473#1" expanded="false" />
+                <element signature="e#9615#14695#0" expanded="false" />
                 <element signature="e#9752#9807#0" expanded="false" />
                 <element signature="e#14825#16521#0" expanded="false" />
               </folding>
@@ -205,9 +270,9 @@
         <option value="$PROJECT_DIR$/other code/mnist.py" />
         <option value="$PROJECT_DIR$/unlabeled.py" />
         <option value="/fragment.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/sdae.py" />
         <option value="$PROJECT_DIR$/main_sdae.py" />
+        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/Plotting.py" />
       </list>
     </option>
@@ -219,9 +284,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="401" />
     <option name="y" value="23" />
-    <option name="width" value="1279" />
+    <option name="width" value="1319" />
     <option name="height" value="948" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -611,8 +675,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main_sdae" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main" />
+        <item index="0" class="java.lang.String" itemvalue="Python.main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main_sdae" />
         <item index="2" class="java.lang.String" itemvalue="Python.sdae" />
         <item index="3" class="java.lang.String" itemvalue="Python.mnist" />
         <item index="4" class="java.lang.String" itemvalue="Python.unlabeled" />
@@ -645,21 +709,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="401" y="23" width="1279" height="948" extended-state="0" />
+    <frame x="0" y="23" width="1319" height="948" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265097" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3985932" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285568" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2602579" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3985932" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32590857" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16491511" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19733751" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280277" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5731609" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5473767" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33880422" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33880422" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -716,13 +781,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Plotting.py</url>
-          <line>283</line>
+          <line>330</line>
           <option name="timeStamp" value="293" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Plotting.py</url>
-          <line>318</line>
-          <option name="timeStamp" value="295" />
+          <line>293</line>
+          <option name="timeStamp" value="297" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -732,7 +797,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="297" />
+      <option name="time" value="299" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -993,45 +1058,10 @@ ax.scatter(int(target[0] * 40), int(target[1] * 30), label='target', color='c', 
     <entry file="file://$PROJECT_DIR$/graph_output/errors_visualization.png" />
     <entry file="file://$PROJECT_DIR$/graph_output/errors_visualization11.png" />
     <entry file="file://$PROJECT_DIR$/graph_output/Acc_Loss_curve_cla_autoencoder[64, 32, 16].png" />
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="410" column="27" lean-forward="false" selection-start-line="410" selection-start-column="27" selection-end-line="410" selection-end-column="27" />
-          <folding>
-            <element signature="e#560#827#0" expanded="false" />
-            <element signature="e#867#1748#0" expanded="false" />
-            <element signature="e#1786#3840#0" expanded="false" />
-            <element signature="e#4106#4445#0" expanded="false" />
-            <element signature="e#4727#5329#0" expanded="false" />
-            <element signature="e#5367#6528#0" expanded="false" />
-            <element signature="e#6670#10954#0" expanded="false" />
-            <element signature="e#11082#12774#0" expanded="false" />
-            <element signature="e#12967#14890#0" expanded="false" />
-            <element signature="e#17283#19036#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_cla_autoencoder[200, 200, 200].png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_cla_autoencoder[64, 32, 16].png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_reg_autoencoder[64, 32, 16].png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_reg_autoencoder[200, 200, 200].png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_cla_autoencoder[200, 200, 200].png" />
+    <entry file="file://$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_cla_autoencoder[64, 32, 16].png" />
+    <entry file="file://$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_reg_autoencoder[64, 32, 16].png" />
+    <entry file="file://$PROJECT_DIR$/results(gridsize2+auto)/Acc_Loss_curve_reg_autoencoder[200, 200, 200].png" />
     <entry file="file://$PROJECT_DIR$/result(auto+dropout)/errors_visualization_1_1.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1047,21 +1077,25 @@ ax.scatter(int(target[0] * 40), int(target[1] * 30), label='target', color='c', 
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_sdae.py">
+    <entry file="file://$PROJECT_DIR$/result(simple)/errors_visualization_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result(simple)/Acc_Loss_curve_cla_[64, 32, 16].png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cdf1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comparison1/e_m1_1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4351">
-          <caret line="504" column="0" lean-forward="false" selection-start-line="503" selection-start-column="0" selection-end-line="504" selection-end-column="0" />
-          <folding>
-            <element signature="e#531#798#0" expanded="false" />
-            <element signature="e#838#1719#0" expanded="false" />
-            <element signature="e#1757#3811#0" expanded="false" />
-            <element signature="e#4077#4416#0" expanded="false" />
-            <element signature="e#4698#5300#0" expanded="false" />
-            <element signature="e#5338#6499#0" expanded="false" />
-            <element signature="e#6562#9473#1" expanded="false" />
-            <element signature="e#9752#9807#0" expanded="false" />
-            <element signature="e#14825#16521#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-11406">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1077,40 +1111,56 @@ ax.scatter(int(target[0] * 40), int(target[1] * 30), label='target', color='c', 
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/result(simple)/errors_visualization_1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result(simple)/Acc_Loss_curve_cla_[64, 32, 16].png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CDF1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comparison1/e_m1_1.txt">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11406">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="665">
+          <caret line="124" column="53" lean-forward="false" selection-start-line="124" selection-start-column="53" selection-end-line="124" selection-end-column="53" />
+          <folding>
+            <element signature="e#560#827#0" expanded="false" />
+            <element signature="e#867#1748#0" expanded="false" />
+            <element signature="e#1786#3840#0" expanded="false" />
+            <element signature="e#4106#4445#0" expanded="false" />
+            <element signature="e#4727#5329#0" expanded="false" />
+            <element signature="e#5367#6528#0" expanded="false" />
+            <element signature="e#6670#10954#0" expanded="false" />
+            <element signature="e#11082#12774#0" expanded="false" />
+            <element signature="e#14992#17292#0" expanded="false" />
+            <element signature="e#17295#19048#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_sdae.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2493">
+          <caret line="504" column="0" lean-forward="false" selection-start-line="503" selection-start-column="0" selection-end-line="504" selection-end-column="0" />
+          <folding>
+            <element signature="e#531#798#0" expanded="false" />
+            <element signature="e#838#1719#0" expanded="false" />
+            <element signature="e#4077#4416#0" expanded="false" />
+            <element signature="e#4698#5300#0" expanded="false" />
+            <element signature="e#5338#6499#0" expanded="false" />
+            <element signature="e#6562#9473#1" expanded="false" />
+            <element signature="e#9615#14695#0" expanded="false" />
+            <element signature="e#9752#9807#0" expanded="false" />
+            <element signature="e#14825#16521#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Plotting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="247" column="14" lean-forward="false" selection-start-line="247" selection-start-column="14" selection-end-line="247" selection-end-column="14" />
+        <state relative-caret-position="373">
+          <caret line="244" column="47" lean-forward="false" selection-start-line="244" selection-start-column="47" selection-end-line="244" selection-end-column="47" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#248#841#0" expanded="false" />
             <element signature="e#890#2827#0" expanded="false" />
-            <element signature="e#3059#4652#0" expanded="false" />
             <element signature="e#4655#4756#0" expanded="false" />
             <element signature="e#5979#6810#0" expanded="false" />
+            <element signature="e#9336#10743#0" expanded="false" />
+            <element signature="e#10812#12235#0" expanded="false" />
+            <element signature="e#12296#13743#0" expanded="false" />
           </folding>
         </state>
       </provider>
