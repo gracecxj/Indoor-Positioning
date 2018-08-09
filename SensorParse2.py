@@ -6,7 +6,7 @@ import numpy as np
 import pickle as pkl
 import h5py
 from preprocessing import Masking
-
+'''this file is for HMM, generated two 'matrix', one is the conversion probability, and the another is median wr'''
 # define some constant variables
 north_west = (55.945139, -3.18781)
 south_east = (55.944600, -3.186537)
@@ -357,7 +357,7 @@ def iterate(path):
 
 
 # calculate the median wr(every ap) value for each transition
-def cal_median_for_each_transition():
+def cal_median_for_each_transition(is_median):
     median_container = {}
 
     # 对于wr_container中的每一个转场记录，也就是M_count中每一个不为0的元素
@@ -367,11 +367,37 @@ def cal_median_for_each_transition():
         for ap in range(NUM_COLUMNS):
             # 对于转场trans所对应的第ap个AP
             small_dict = small_dicts_list[ap]
-            # 找出small_dict中value最大的的key,即找出出现最多次的strength
-            element[ap] = sorted(small_dict, key=lambda x: small_dict[x])[-1]
+            # 处理strength为0的情况
+            if 0 in small_dict.keys():
+                small_dict[-100.0] = small_dict.pop(0)
+            # 求中位数 - median
+            if is_median:
+                # Here is a simplified process, which has no effect on odd numbers.
+                # For even numbers, it is just taken the previous one instead of the average of middle two.
+                median_ind = M_count[trans]//2
+
+                # # 奇数
+                # if M_count[trans]%2:
+                #     median_ind = M_count[trans]//2
+                # # 偶数
+                # else:
+                #     median_ind = (M_count[trans]//2 -1, M_count[trans]//2)
+                accumulator = 0
+                sorted_key = sorted(small_dict.items(), key=lambda x: x[0]) # 按键从小到大
+                for strength, times in sorted_key:
+                    accumulator += times
+                    if accumulator >= median_ind:
+                        element[ap] = strength
+                        break
+            # 求众数- mode
+            else:
+                # 找出small_dict中value最大的的key,即找出出现最多次的strength
+                element[ap] = sorted(small_dict, key=lambda x: small_dict[x])[-1]
+
         median_container[trans] = element
 
     return median_container
+
 
 # return 'M_probability' (a 237*237 matrix)
 def generate_probability_matrix(m_count):
@@ -387,7 +413,6 @@ def generate_probability_matrix(m_count):
                 element[j] = m_count[i, j] / summation
         matrix[i, :] = element
     return matrix
-
 
 
 # saved 'trans_to_median_wr_dict' into "./background_results/M_median_wr.pkl"
@@ -415,7 +440,9 @@ if os.path.isfile(file2):
     os.remove(file2)
 
 iterate("/Users/chenxingji/PycharmProjects/InLoc_preprocessing/background")
-trans_to_median_wr_dict = cal_median_for_each_transition()
+# if is_median sets to False, then it will calculate the wr mode for each transition
+# if is_median sets to True, then calculate the wr median for each transition
+trans_to_median_wr_dict = cal_median_for_each_transition(is_median=True)
 M_probability = generate_probability_matrix(M_count)
 save_matrix()
 

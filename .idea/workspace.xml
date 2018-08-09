@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30055852-64aa-485b-aad2-50a5cb2e9e6e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/SensorParse2.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/background/0529_afternoon/background_2018-05-29 17-19-09.xml" afterPath="$PROJECT_DIR$/background_reserved/background_2018-05-29 17-19-09.xml" />
-      <change beforePath="$PROJECT_DIR$/background/0601_morning/background_2018-06-01 11-17-14.xml" afterPath="$PROJECT_DIR$/background_reserved/background_2018-06-01 11-17-14.xml" />
-      <change beforePath="$PROJECT_DIR$/background/0611_morning/background_2018-06-11 12-03-12.xml" afterPath="$PROJECT_DIR$/background_reserved/background_2018-06-11 12-03-12.xml" />
-      <change beforePath="$PROJECT_DIR$/background/0709_morning/background_2018-07-09 11-12-37.xml" afterPath="$PROJECT_DIR$/background_reserved/background_2018-07-09 11-12-37.xml" />
+      <change beforePath="$PROJECT_DIR$/SensorParse2.py" afterPath="$PROJECT_DIR$/SensorParse2.py" />
+      <change beforePath="$PROJECT_DIR$/background_results/M_median_wr.pkl" afterPath="$PROJECT_DIR$/background_results/M_median_wr.pkl" />
+      <change beforePath="$PROJECT_DIR$/background_results/M_probability" afterPath="$PROJECT_DIR$/background_results/M_probability" />
+      <change beforePath="$PROJECT_DIR$/background_results/interpolation_loc_wr.h5" afterPath="$PROJECT_DIR$/background_results/interpolation_loc_wr.h5" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +24,7 @@
     <SUITE FILE_PATH="coverage/InLoc_preprocessing$SensorParse.coverage" NAME="SensorParse Coverage Results" MODIFIED="1531857376423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/IndoorLocalization_data_preprocessing$location.coverage" NAME="location Coverage Results" MODIFIED="1528151802397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/IndoorLocalization_data_preprocessing$sensor.coverage" NAME="sensor Coverage Results" MODIFIED="1528127497123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/InLoc_preprocessing$SensorParse2.coverage" NAME="SensorParse2 Coverage Results" MODIFIED="1533832487891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/InLoc_preprocessing$SensorParse2.coverage" NAME="SensorParse2 Coverage Results" MODIFIED="1533837064736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/IndoorLocalization_data_preprocessing$foreground.coverage" NAME="foreground Coverage Results" MODIFIED="1527691325734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/InLoc_preprocessing$masking.coverage" NAME="masking Coverage Results" MODIFIED="1531846662986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/InLoc_preprocessing$main.coverage" NAME="main Coverage Results" MODIFIED="1533505420754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -138,25 +137,24 @@
       <file leaf-file-name="SensorParse2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SensorParse2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+            <state relative-caret-position="166">
+              <caret line="433" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="450" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#1006#1236#0" expanded="false" />
-                <element signature="e#1451#1940#0" expanded="false" />
-                <element signature="e#1979#3075#0" expanded="false" />
-                <element signature="e#3689#5321#0" expanded="false" />
-                <element signature="e#5355#14395#0" expanded="false" />
-                <element signature="e#6350#8668#0" expanded="false" />
-                <element signature="e#8710#9883#0" expanded="false" />
-                <element signature="e#9885#9890#0" expanded="false" />
-                <element signature="e#12898#13294#0" expanded="false" />
-                <element signature="e#13356#13630#0" expanded="false" />
-                <element signature="e#13762#13991#0" expanded="false" />
-                <element signature="e#14490#14820#0" expanded="false" />
-                <element signature="e#14927#15450#0" expanded="false" />
-                <element signature="e#15542#15936#0" expanded="false" />
-                <element signature="e#16103#16587#0" expanded="false" />
+                <element signature="e#1121#1351#0" expanded="false" />
+                <element signature="e#1566#2055#0" expanded="false" />
+                <element signature="e#2094#3190#0" expanded="false" />
+                <element signature="e#3804#5436#0" expanded="false" />
+                <element signature="e#5470#14510#0" expanded="false" />
+                <element signature="e#6465#8783#0" expanded="false" />
+                <element signature="e#8825#9998#0" expanded="false" />
+                <element signature="e#10000#10005#0" expanded="false" />
+                <element signature="e#13013#13409#0" expanded="false" />
+                <element signature="e#13471#13745#0" expanded="false" />
+                <element signature="e#13877#14106#0" expanded="false" />
+                <element signature="e#14605#14935#0" expanded="false" />
+                <element signature="e#16711#17105#0" expanded="false" />
+                <element signature="e#17271#17755#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -693,22 +691,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1315" height="950" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3263158" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32748538" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25964913" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2654971" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31578946" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32590857" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17360565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17124902" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280277" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19415204" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21131186" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18695994" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3625731" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3625731" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -777,6 +774,11 @@
           <line>371</line>
           <option name="timeStamp" value="299" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SensorParse2.py</url>
+          <line>385</line>
+          <option name="timeStamp" value="333" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -785,123 +787,70 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="331" />
+      <option name="time" value="334" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>print(&quot;\nFinished generating 2 global matrix...\n1: trans_to_median_wr_dict, 2: M_probability&quot;)
-print(&quot;and save into separate file... \n1:'./background_results/M_median_wr.pkl', 2: './background_results/M_prob.h5'&quot;)</expression-string>
+        <expression-string>accumulator = 0
+for strength, times in sorted_key:
+    accumulator += times
+    if accumulator &gt;= median_ind:
+        element[ap] = strength
+        break</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>print(&quot;\nFinished generating 2 global matrix...\n1: trans_to_median_wr_dict, 2: M_probability\n&quot;)
-print(&quot;Save into separate file... \n1:'./background_results/M_median_wr.pkl', 2: './background_results/M_prob.h5'&quot;)</expression-string>
+        <expression-string>for strength, times in sorted_key:
+    accumulator += times
+    if accumulator &gt;= median_ind:
+        element[ap] = strength
+        break</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>print(&quot;\nFinished generating 2 global matrix...\n1: trans_to_median_wr_dict, 2: M_probability\n\n&quot;)
-print(&quot;Save into separate file... \n1:'./background_results/M_median_wr.pkl', 2: './background_results/M_prob.h5'&quot;)</expression-string>
+        <expression-string>for strength, times in sorted_key:
+    accumulator += times
+    if accumulator &gt;= median_ind:
+        element[ap] = strength</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>print(&quot;\nFinished generating 2 global matrix.\n1: trans_to_median_wr_dict, 2: M_probability\n\n&quot;)
-print(&quot;save into separate file 1:\'./background_results/M_median_wr.pkl\', 2: \''./background_results/M_prob.h5'\'&quot;)</expression-string>
+        <expression-string>M_count[trans]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>def save_matrix():
-    # save 'M_probability' into file
-    h5_filename = &quot;./background_results/M_median_wr.h5&quot;
-    h5_file = h5py.File(h5_filename, mode='w')
-    write_content = M_probability
-    h5_file.create_dataset('trans_to_median_wr_dict', data=write_content)
-    h5_file.close()
-
-    # save 'trans_to_median_wr_dict' into file
-    pickle_file = open(&quot;./background_results/M_median_wr.pkl&quot;, mode='wb+')
-    write_content = trans_to_median_wr_dict
-    pkl.dump(write_content, pickle_file)
-    pickle_file.close()
-    
-    
-save_matrix()</expression-string>
+        <expression-string>sorted_key = sorted(small_dict.items(), key=lambda x: x[0])  # 按键从小到大</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>def save_matrix():
-    # save 'M_probability' into file
-    h5_filename = &quot;./background_results/M_median_wr.h5&quot;
-    h5_file = h5py.File(h5_filename, mode='w')
-    write_content = trans_to_median_wr_dict
-    h5_file.create_dataset('trans_to_median_wr_dict', data=write_content)
-    h5_file.close()
-
-    # save 'trans_to_median_wr_dict' into file
-    pickle_file = open(&quot;./background_results/M_median_wr.pkl&quot;, mode='wb+')
-    write_content = trans_to_median_wr_dict
-    pkl.dump(write_content, pickle_file)
-    pickle_file.close()
-    
-save_matrix()</expression-string>
+        <expression-string>if -100 in small_dict.keys():
+    small_dict[-100.0] = small_dict.pop(0)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>trans_to_median_wr_dict = cal_median_for_each_transition()
-M_probability = generate_probability_matrix(M_count)</expression-string>
+        <expression-string>if -100 in small_dict.keys():
+    small_dict[-100] = small_dict.pop(0)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>def generate_probability_matrix(m_count):
-    matrix = np.zeros(np.shape(m_count))
-    num_grids = np.shape(matrix)[0]
-    # start from i
-    for i in range(num_grids):
-        element = np.zeros((num_grids))
-        summation = sum(m_count[i, :])
-        if summation != 0:
-            # end in j
-            for j in range(num_grids):
-                element[j] = m_count[i, j] / summation
-        matrix[i, :] = element
-    return matrix</expression-string>
+        <expression-string>if 0 in small_dict.keys():
+    small_dict[-100] = small_dict.pop(0)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>def cal_median_for_each_transition():
-    median_container = {}
-
-    # 对于wr_container中的每一个转场记录，也就是M_count中每一个不为0的元素
-    for trans, small_dicts_list in wr_container.items():
-        element = np.zeros((NUM_COLUMNS))
-        # 填充element的每一个元素
-        for ap in range(NUM_COLUMNS):
-            # 对于转场trans所对应的第ap个AP
-            small_dict = small_dicts_list[ap]
-            # 找出small_dict中value最大的的key,即找出出现最多次的strength
-            element[ap] = sorted(small_dict, key=lambda x: small_dict[x])[-1]
-        median_container[trans] = element
-
-    return median_container</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>h5_filename = &quot;./background_results/M_median_wr.h5&quot;
-h5_file = h5py.File(h5_filename, mode='w')
-write_content = trans_to_median_wr_dict
-h5_file.create_dataset('trans_to_median_wr_dict', data=write_content)
-h5_file.close()</expression-string>
+        <expression-string>if 0 in small_dict.keys():
+    small_dict[-100] = small_dict.popitem(0)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -1222,25 +1171,24 @@ h5_file.close()</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/SensorParse2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        <state relative-caret-position="166">
+          <caret line="433" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="450" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#1006#1236#0" expanded="false" />
-            <element signature="e#1451#1940#0" expanded="false" />
-            <element signature="e#1979#3075#0" expanded="false" />
-            <element signature="e#3689#5321#0" expanded="false" />
-            <element signature="e#5355#14395#0" expanded="false" />
-            <element signature="e#6350#8668#0" expanded="false" />
-            <element signature="e#8710#9883#0" expanded="false" />
-            <element signature="e#9885#9890#0" expanded="false" />
-            <element signature="e#12898#13294#0" expanded="false" />
-            <element signature="e#13356#13630#0" expanded="false" />
-            <element signature="e#13762#13991#0" expanded="false" />
-            <element signature="e#14490#14820#0" expanded="false" />
-            <element signature="e#14927#15450#0" expanded="false" />
-            <element signature="e#15542#15936#0" expanded="false" />
-            <element signature="e#16103#16587#0" expanded="false" />
+            <element signature="e#1121#1351#0" expanded="false" />
+            <element signature="e#1566#2055#0" expanded="false" />
+            <element signature="e#2094#3190#0" expanded="false" />
+            <element signature="e#3804#5436#0" expanded="false" />
+            <element signature="e#5470#14510#0" expanded="false" />
+            <element signature="e#6465#8783#0" expanded="false" />
+            <element signature="e#8825#9998#0" expanded="false" />
+            <element signature="e#10000#10005#0" expanded="false" />
+            <element signature="e#13013#13409#0" expanded="false" />
+            <element signature="e#13471#13745#0" expanded="false" />
+            <element signature="e#13877#14106#0" expanded="false" />
+            <element signature="e#14605#14935#0" expanded="false" />
+            <element signature="e#16711#17105#0" expanded="false" />
+            <element signature="e#17271#17755#0" expanded="false" />
           </folding>
         </state>
       </provider>
