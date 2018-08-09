@@ -20,15 +20,15 @@ The following plots is the "error in meters cdf" of different models. More detai
 
 simple vs dropout:
 
-![simple vs dropout](https://github.com/gracecxj/Indoor-Positioning/comparison1/CDF1.png)
+![simple vs dropout](Indoor-Positioning/comparison1/CDF1.png)
 
 simple vs autoencoder:
 
-![simple vs autoencoder](https://github.com/gracecxj/Indoor-Positioning/comparison2/CDF2.png)
+![simple vs autoencoder](Indoor-Positioning/comparison2/CDF2.png)
 
 autoencoder vs autoencoder+dropout:
 
-![autoencoder vs autoencoder+dropout](https://github.com/gracecxj/Indoor-Positioning/comparison3/CDF3.png)
+![autoencoder vs autoencoder+dropout](Indoor-Positioning/comparison3/CDF3.png)
 
 
 **To be continue:**
