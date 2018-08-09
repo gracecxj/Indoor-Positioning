@@ -419,14 +419,14 @@ def generate_probability_matrix(m_count):
 # saved 'M_probability' into './background_results/M_prob.h5'
 def save_matrix():
     # save 'M_probability' into file
-    h5_filename = "./background_results/M_probability"
+    h5_filename = "./background_results/M_probability.h5"
     h5_file = h5py.File(h5_filename, mode='w')
     write_content = M_probability
     h5_file.create_dataset('m_probability', data=write_content)
     h5_file.close()
 
     # save 'trans_to_median_wr_dict' into file
-    pickle_file = open("./background_results/M_median_wr.pkl", mode='wb+')
+    pickle_file = open("./background_results/M_median_wr.pickle", mode='wb+')
     write_content = trans_to_median_wr_dict
     pkl.dump(write_content, pickle_file)
     pickle_file.close()
