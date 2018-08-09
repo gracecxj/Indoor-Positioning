@@ -12,6 +12,7 @@
 - constructed 2 simple neural nets(classification, regression) to predict the location from wifi fingerprint
 - implemented autoencoder layerwise to pretrain the neural nets(make use of the large amount of unlabeled wifi data collected previously)
 - compare different network strcuctures(\[32,64,16\] and \[200,200,200\]). Meantime, see how dropout layer and autoencoder pretrained weights helps the prediction process.
+- get the transition probability matrix, and the median wr 'matrix'(each element in this two matrices indicate transition between two grid\[start_grid -> row, end_grid -> column\]).
 
 **Current results visualization:**
 
@@ -19,15 +20,15 @@ The following plots is the "error in meters cdf" of different models. More detai
 
 simple vs dropout:
 
-![simple vs dropout](https://github.com/gracecxj/Indoor-Positioning/blob/master/CDF1.png)
+![simple vs dropout](https://github.com/gracecxj/Indoor-Positioning/blob/master/comparison1/CDF1.png)
 
 simple vs autoencoder:
 
-![simple vs autoencoder](https://github.com/gracecxj/Indoor-Positioning/blob/master/CDF2.png)
+![simple vs autoencoder](https://github.com/gracecxj/Indoor-Positioning/blob/master/comparison2/CDF2.png)
 
 autoencoder vs autoencoder+dropout:
 
-![autoencoder vs autoencoder+dropout](https://github.com/gracecxj/Indoor-Positioning/blob/master/CDF3.png)
+![autoencoder vs autoencoder+dropout](https://github.com/gracecxj/Indoor-Positioning/blob/master/comparison3/CDF3.png)
 
 
 **To be continue:**
