@@ -3,7 +3,7 @@
 ## MSc Project: Indoor localization using neural networks
 
 **Brief introducton:** 
-1. try to use clollected wifi fingerprint to train a rough neural network to roughly predict the location of a mobile device
+1. try to use collected wifi fingerprint to train a rough neural network to roughly predict the location of a mobile device
 2. using the accelerometer and the magnetometer data to enhence the time consistency of the location prediction(trajectory continuity)
 
 **Current progress:**
